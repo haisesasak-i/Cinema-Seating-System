@@ -17,5 +17,10 @@ public class Cinema {
             }
         }
     }
-    public void bookSeat(int row, int column, String customerName) {}
+    public void bookSeat(int row, int column, String customerName) {
+        if (seats[row][column].getBookStatus()) {
+            System.out.println("The seat is already book");
+            return;
+        }
+    }
 }

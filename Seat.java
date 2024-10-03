@@ -7,11 +7,7 @@ public class Seat {
         seatNumber = 0;
     } // as static block runs only if class is loaded in memory so it will
       // initialize the seatNumber variable
-    public Seat(String customerName) {
-        this.customerName = customerName;
-        isBooked = true;
-        seatNumber++;
-    }
+
     public Seat() {
         isBooked = false;
         seatNumber++;
