@@ -18,6 +18,14 @@ public class Cinema {
         }
     }
     public void bookSeat(int row, int column, String customerName) {
+        if (row >= this.rows || column >= this.columns) {
+            System.out.println("The seat does not exist\nThere are total " +
+                               (this.rows * this.columns) +
+                               " seats available and seating plan is " +
+                               this.rows + "x" + this.columns + ".\n");
+
+            return;
+        }
         if (seats[row][column].getBookStatus()) {
             System.out.println("The seat is already book");
             return;
