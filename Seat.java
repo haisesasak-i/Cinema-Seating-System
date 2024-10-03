@@ -9,8 +9,13 @@ public class Seat {
       // initialize the seatNumber variable
 
     public Seat() {
+        this.customerName = "No Customer";
         isBooked = false;
         seatNumber++;
+    }
+    public void bookSeat(String customerName) {
+        this.customerName = customerName;
+        this.isBooked = true;
     }
     public void cancel() { this.isBooked = false; }
     @Override
