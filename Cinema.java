@@ -22,5 +22,6 @@ public class Cinema {
             System.out.println("The seat is already book");
             return;
         }
+        seats[row][column].bookSeat(customerName);
     }
 }
