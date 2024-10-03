@@ -12,6 +12,10 @@ public class Seat {
         isBooked = true;
         seatNumber++;
     }
+    public Seat() {
+        isBooked = false;
+        seatNumber++;
+    }
     public void cancel() { this.isBooked = false; }
     @Override
     public String toString() {
