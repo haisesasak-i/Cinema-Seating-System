@@ -9,5 +9,13 @@ public class Cinema {
         this.columns = columns;
         this.rows = rows;
         this.seats = new Seat[rows][columns];
+        {
+            for (int i = 0; i < this.seats.length; i++) {
+                for (int j = 0; j < seats[i].length; j++) {
+                    seats[i][j] = new Seat();
+                }
+            }
+        }
     }
+    public void bookSeat(int row, int column, String customerName) {}
 }

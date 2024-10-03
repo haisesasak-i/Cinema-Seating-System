@@ -28,4 +28,7 @@ public class Seat {
     private String bookStatus() {
         return "Seat Number:" + seatNumber + "\nBook status:" + this.isBooked;
     }
+    public String getCustomerName() { return this.customerName; }
+    public boolean getBookStatus() { return this.isBooked; }
+    public int getSeatNumber() { return seatNumber; }
 }
