@@ -1,17 +1,18 @@
 public class Seat {
     // attributes
-    static int seatNumber;
+    private int seatNumber;
+    private static int seatCount;
     private boolean isBooked;
     private String customerName;
     static {
-        seatNumber = 0;
+        seatCount = 0;
     } // as static block runs only if class is loaded in memory so it will
       // initialize the seatNumber variable
 
     public Seat() {
         this.customerName = "No Customer";
-        isBooked = false;
-        seatNumber++;
+        this.isBooked = false;
+        this.seatNumber = ++seatCount;
     }
     public void bookSeat(String customerName) {
         this.customerName = customerName;

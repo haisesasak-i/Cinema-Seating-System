@@ -28,6 +28,7 @@ public class Cinema {
         for (Seat currentRowOfSeats[] : seats) {
             for (Seat currentSeat : currentRowOfSeats) {
                 System.out.println(currentSeat);
+                System.out.println("");
             }
         }
     }
