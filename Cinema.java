@@ -24,4 +24,11 @@ public class Cinema {
         }
         seats[row][column].bookSeat(customerName);
     }
+    public void displaySeating() {
+        for (Seat currentRowOfSeats[] : seats) {
+            for (Seat currentSeat : currentRowOfSeats) {
+                System.out.println(currentSeat);
+            }
+        }
+    }
 }
