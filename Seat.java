@@ -33,4 +33,9 @@ public class Seat {
     public String getCustomerName() { return this.customerName; }
     public boolean getBookStatus() { return this.isBooked; }
     public int getSeatNumber() { return seatNumber; }
+    public void setSeatNumber(int seatNumber) { this.seatNumber = seatNumber; }
+    public void setBooked(boolean isBooked) { this.isBooked = isBooked; }
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
 }

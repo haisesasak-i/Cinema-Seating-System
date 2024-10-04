@@ -18,12 +18,7 @@ public class Cinema {
         }
     }
     public void bookSeat(int row, int column, String customerName) {
-        if (row >= this.rows || column >= this.columns) {
-            System.out.println("The seat does not exist\nThere are total " +
-                               (this.rows * this.columns) +
-                               " seats available and seating plan is " +
-                               this.rows + "x" + this.columns + ".\n");
-
+        if (this.checkForInvalidSeats(row, column)) {
             return;
         }
         if (seats[row][column].getBookStatus()) {
@@ -39,5 +34,30 @@ public class Cinema {
                 System.out.println("");
             }
         }
+    }
+    public void cancelSeating(int row, int column) {
+        if (this.checkForInvalidSeats(row, column)) {
+            return;
+        }
+
+        if (!this.seats[row][column].getBookStatus()) {
+            System.out.println("This seat is not booked.\nYou need to book a "
+                               + "seat first in order to cancel it.");
+            System.out.println("");
+            return;
+        }
+        this.seats[row][column].setBooked(false);
+        System.out.println("The seat is cancelled successfully!");
+        System.out.println("");
+    }
+    private boolean checkForInvalidSeats(int row, int column) {
+        if (row >= this.rows || column >= this.columns) {
+            System.out.println("The seat does not exist\nThere are total " +
+                               (this.rows * this.columns) +
+                               " seats available and seating plan is " +
+                               this.rows + "x" + this.columns + ".\n");
+            return true;
+        }
+        return false;
     }
 }
