@@ -62,24 +62,7 @@ public class UserInterface {
                 System.out.println("Thanks! for using our cinema booking "
                                    + "service\nKindly rate us out of 5");
                 System.out.println("");
-                while (true) {
-                    this.printRatingstars(5);
-                    System.out.print("How many stars would you like to "
-                                     + "give us out of 5:");
-                    int userGivenRating = Integer.valueOf(scanner.nextLine());
-                    if (userGivenRating < 0 || userGivenRating > 5) {
-                        System.out.println(
-                            "\nRating must be between 0 and "
-                            + "5 (wholeNumber)\nKindly try again!");
-
-                    } else {
-                        System.out.println("");
-                        this.printRatingstars(userGivenRating);
-                        System.out.println("Thanks! for giving us " +
-                                           userGivenRating + " stars!");
-                        break;
-                    }
-                }
+                this.ratingSystem();
                 return;
             }
         }
@@ -90,5 +73,24 @@ public class UserInterface {
             System.out.print("* ");
         }
         System.out.println("");
+    }
+    private void ratingSystem() {
+        while (true) {
+            this.printRatingstars(5);
+            System.out.print("How many stars would you like to "
+                             + "give us out of 5:");
+            int userGivenRating = Integer.valueOf(scanner.nextLine());
+            if (userGivenRating < 0 || userGivenRating > 5) {
+                System.out.println("\nRating must be between 0 and "
+                                   + "5 (wholeNumber)\nKindly try again!");
+
+            } else {
+                System.out.println("");
+                this.printRatingstars(userGivenRating);
+                System.out.println("Thanks! for giving us " + userGivenRating +
+                                   " stars!");
+                break;
+            }
+        }
     }
 }
