@@ -48,7 +48,7 @@ public class UserInterface {
                         break;
                     }
                     System.out.println(
-                        "You have entered an invalid name\n Try again!");
+                        "You have entered an invalid name.\nTry again!");
                     System.out.println("");
                 }
                 name = this.capitalizeName(name);
@@ -57,15 +57,21 @@ public class UserInterface {
                 break;
             }
             case 2: {
-
+                System.out.println("The seating layout is 8x5");
+                System.out.println("Enter your row number:");
+                int row = Integer.valueOf(scanner.nextLine());
+                System.out.println("Enter your column number:");
+                int column = Integer.valueOf(scanner.nextLine());
+                this.screening.cancelBookingForScreening(row, column);
                 break;
             }
             case 3: {
-
+                this.screening.displaySeatingForScreening();
                 break;
             }
             case 4: {
-
+                this.screening.getScreeningDetails();
+                this.screening.displaySeatingForScreening();
                 break;
             }
             default: {
@@ -87,7 +93,7 @@ public class UserInterface {
             }
         }
     }
-    private void printRatingstars(int totalStars) {
+    private void printRatingStars(int totalStars) {
 
         for (int i = 0; i < totalStars; i++) {
             System.out.print("* ");
@@ -96,7 +102,7 @@ public class UserInterface {
     }
     private void ratingSystem() {
         while (true) {
-            this.printRatingstars(5);
+            this.printRatingStars(5);
             System.out.print("How many stars would you like to "
                              + "give us out of 5:");
             int userGivenRating = Integer.valueOf(scanner.nextLine());
@@ -106,7 +112,7 @@ public class UserInterface {
 
             } else {
                 System.out.println("");
-                this.printRatingstars(userGivenRating);
+                this.printRatingStars(userGivenRating);
                 System.out.println("Thanks! for giving us " + userGivenRating +
                                    " stars!");
                 break;

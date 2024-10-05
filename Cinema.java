@@ -26,6 +26,8 @@ public class Cinema {
             return;
         }
         seats[row][column].bookSeat(customerName);
+        System.out.println("The seat is booked successfully!");
+        System.out.println("");
     }
     public void displaySeating() {
         for (Seat currentRowOfSeats[] : seats) {
