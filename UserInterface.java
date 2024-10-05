@@ -33,6 +33,26 @@ public class UserInterface {
             }
             switch (choiceFromMenu) {
             case 1: {
+                String name = "";
+
+                System.out.println("The seating layout is 8x5");
+                System.out.println("Enter your row number:");
+                int row = Integer.valueOf(scanner.nextLine());
+                System.out.println("Enter your column number:");
+                int column = Integer.valueOf(scanner.nextLine());
+
+                while (true) {
+                    System.out.println("Enter your name:");
+                    name = scanner.nextLine();
+                    if (!name.isEmpty()) {
+                        break;
+                    }
+                    System.out.println(
+                        "You have entered an invalid name\n Try again!");
+                    System.out.println("");
+                }
+                name = this.capitalizeName(name);
+                this.screening.bookSeatForScreening(row, column, name);
 
                 break;
             }
@@ -92,5 +112,11 @@ public class UserInterface {
                 break;
             }
         }
+    }
+    private String capitalizeName(String name) {
+        if (name == null || name.isEmpty()) {
+            return "Invalid Name";
+        }
+        return name.substring(0, 1).toUpperCase().substring(1).toLowerCase();
     }
 }

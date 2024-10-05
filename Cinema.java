@@ -51,7 +51,8 @@ public class Cinema {
         System.out.println("");
     }
     private boolean checkForInvalidSeats(int row, int column) {
-        if (row >= this.rows || column >= this.columns) {
+        if (row >= this.rows || column >= this.columns || row < 0 ||
+            column < 0) {
             System.out.println("The seat does not exist\nThere are total " +
                                (this.rows * this.columns) +
                                " seats available and seating plan is " +
