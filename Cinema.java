@@ -60,4 +60,8 @@ public class Cinema {
         }
         return false;
     }
+    public String toString() {
+        return "Welcome to " + this.name +
+            " Cinema\nWhere imagination comes to reality!";
+    }
 }
