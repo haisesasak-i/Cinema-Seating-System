@@ -14,4 +14,10 @@ public class Screening {
     public void cancelBookingForScreening(int row, int column) {
         this.cinema.cancelSeating(row, column);
     }
+    public void displaySeatingForScreening() { this.cinema.displaySeating(); }
+    public String getScreeningDetails() {
+        return "Movie Name: " + this.movieName +
+            "\nShow Time: " + this.showTime + " today"
+            + "\nSeating Layout:(8x5)\n";
+    }
 }
