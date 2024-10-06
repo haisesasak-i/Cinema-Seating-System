@@ -1,7 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-
-        Screening screening = new Screening("iron man", "12:30PM");
+        MoviesAndTime moviesAndTime = new MoviesAndTime();
+        Screening screening = new Screening(moviesAndTime.getRandomMovie(),
+                                            moviesAndTime.getRandomTime());
         UserInterface interface1 = new UserInterface(screening);
         interface1.start();
     }

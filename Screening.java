@@ -17,7 +17,7 @@ public class Screening {
     public void displaySeatingForScreening() { this.cinema.displaySeating(); }
     public String getScreeningDetails() {
         return "Movie Name: " + this.movieName +
-            "\n\nShow Time: " + this.showTime + " today"
+            "\n\nShow Time: " + this.showTime + " Today"
             + "\n\nSeating Layout:(8x5)\n\nSeats:";
     }
 }
