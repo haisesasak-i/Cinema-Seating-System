@@ -1,4 +1,5 @@
 import java.util.Random;
+// created two arrays and use random to get two random index
 public class MoviesAndTime {
     private Random random;
     private String[] movieNames = {"The Matrix",
@@ -51,7 +52,9 @@ public class MoviesAndTime {
         "01:30 PM", "04:00 PM", "06:30 PM", "09:00 PM"};
     public MoviesAndTime() { this.random = new Random(); }
     public String getRandomMovie() {
-        int index = this.random.nextInt(40);
+        int index =
+            this.random.nextInt(40); // this will get a random index form 0 to
+                                     // 39 and store it in index
         return this.movieNames[index];
     }
     public String getRandomTime() {
