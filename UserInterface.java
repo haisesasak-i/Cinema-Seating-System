@@ -52,7 +52,8 @@ public class UserInterface {
                     System.out.println("");
                 }
                 name = this.capitalizeName(name);
-                this.screening.bookSeatForScreening(row, column, name);
+                System.out.println(name);
+                this.screening.bookSeatForScreening(--row, --column, name);
 
                 break;
             }
@@ -62,7 +63,7 @@ public class UserInterface {
                 int row = Integer.valueOf(scanner.nextLine());
                 System.out.println("Enter your column number:");
                 int column = Integer.valueOf(scanner.nextLine());
-                this.screening.cancelBookingForScreening(row, column);
+                this.screening.cancelBookingForScreening(--row, --column);
                 break;
             }
             case 3: {
@@ -70,13 +71,12 @@ public class UserInterface {
                 break;
             }
             case 4: {
-                this.screening.getScreeningDetails();
+                System.out.println(this.screening.getScreeningDetails());
                 this.screening.displaySeatingForScreening();
                 break;
             }
             default: {
-                System.out.println(
-                    "Thanks! for using our cinema booking service.\n");
+                this.goodByeMessage();
                 return;
             }
             }
@@ -85,10 +85,7 @@ public class UserInterface {
             boolean userChoice = Boolean.valueOf(scanner.nextLine());
             System.out.println("");
             if (!userChoice) {
-                System.out.println("Thanks! for using our cinema booking "
-                                   + "service\nKindly rate us out of 5");
-                System.out.println("");
-                this.ratingSystem();
+                this.goodByeMessage();
                 return;
             }
         }
@@ -113,8 +110,9 @@ public class UserInterface {
             } else {
                 System.out.println("");
                 this.printRatingStars(userGivenRating);
-                System.out.println("Thanks! for giving us " + userGivenRating +
-                                   " stars!");
+                System.out.println(
+                    "Thanks! for giving us " + userGivenRating +
+                    " stars!\nWe are looking forward to see you again!");
                 break;
             }
         }
@@ -123,6 +121,13 @@ public class UserInterface {
         if (name == null || name.isEmpty()) {
             return "Invalid Name";
         }
-        return name.substring(0, 1).toUpperCase().substring(1).toLowerCase();
+        return name.substring(0, 1).toUpperCase() +
+            name.substring(1).toLowerCase();
+    }
+    private void goodByeMessage() {
+        System.out.println("Thanks! for using our cinema booking "
+                           + "service\nKindly rate us out of 5");
+        System.out.println("");
+        this.ratingSystem();
     }
 }
